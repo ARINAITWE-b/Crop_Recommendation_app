@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Prediction Result</title>
+
+<style>
+
+body{
+
+    font-family:Arial;
+    background:#eef2f3;
+
+}
+
+.container{
+
+    width:500px;
+    margin:auto;
+    margin-top:50px;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px gray;
+
+}
+
+h2{
+
+    color:rgb(6, 6, 6);
+
+}
+
+a{
+
+    text-decoration:none;
+    color:white;
+
+}
+
+button{
+
+    background:green;
+    color: white;
+    border:none;
+    padding:12px;
+    width:100%;
+    margin-top:20px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+
+
+/* When the mouse is over the button */
+button:hover{
+
+    background:#37a737ca;
+    transform:scale(1.02);
+
+}
+
+/* When the button is clicked */
+button:active{
+
+    background:#044d04;
+    transform:scale(0.98);
+
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Crop Recommendation System</h1>
+
+{% if crop == "Error" %}
+
+<h3 style="color:red;">
+{{ error }}
+</h3>
+
+{% else %}
+
+
+
+<hr>
+
+<h3>Entered Soil Values</h3>
+
+<p><b>Nitrogen:</b> {{ N }}</p>
+
+<p><b>Phosphorus:</b> {{ P }}</p>
+
+<p><b>Potassium:</b> {{ K }}</p>
+
+<p><b>Temperature:</b> {{ temperature }} °C</p>
+
+<p><b>Humidity:</b> {{ humidity }} %</p>
+
+<p><b>pH:</b> {{ ph }}</p>
+
+<p><b>Rainfall:</b> {{ rainfall }} mm</p>
+
+{% endif %}
+
+<h2>
+Recommended Crop:
+{{ crop }}
+</h2>
+<p>
+AI Model Confidence:
+<b>{{ confidence }}%</b>
+
+</p>
+
+<a href="/download_pdf?
+crop={{crop}}
+&confidence={{confidence}}
+&N={{N}}
+&P={{P}}
+&K={{K}}
+&temperature={{temperature}}
+&humidity={{humidity}}
+&ph={{ph}}
+&rainfall={{rainfall}}">
+
+<button style="background:#86cc8d;">
+
+Download PDF Report
+
+</button>
+
+</a>
+
+<button>
+
+<a href="/">Try Another Sample</a>
+
+
+</button>
+
+
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Crop Recommendation System</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:#f2f2f2;
+        }
+
+        .container{
+
+            width:500px;
+            margin:auto;
+            margin-top:40px;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px gray;
+
+        }
+
+        input{
+
+            width:100%;
+            padding:10px;
+            margin-top:10px;
+            margin-bottom:15px;
+
+        }
+
+        button{
+
+            width:100%;
+            padding:12px;
+            background:green;
+            color:white;
+            border:none;
+            margin-top:20px;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:16px;
+            transition:0.3s;
+        }
+
+
+/* When the mouse is over the button */
+button:hover{
+
+    background:#0b6b0b;
+    transform:scale(1.02);
+
+}
+
+/* When the button is clicked */
+button:active{
+
+    background:#044d04;
+    transform:scale(0.98);
+
+}
+
+
+
+        }
+
+        h2{
+
+            text-align:center;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Crop Recommendation System</h2>
+
+<form action="/predict" method="POST">
+
+<label>Nitrogen (N)</label>
+<input type="number" step="any" name="N" required>
+
+<label>Phosphorus (P)</label>
+<input type="number" step="any" name="P" required>
+
+<label>Potassium (K)</label>
+<input type="number" step="any" name="K" required>
+
+<label>Temperature (°C)</label>
+<input type="number" step="any" name="temperature" required>
+
+<label>Humidity (%)</label>
+<input type="number" step="any" name="humidity" required>
+
+<label>pH</label>
+<input type="number" step="any" name="ph" required>
+
+<label>Rainfall (mm)</label>
+<input type="number" step="any" name="rainfall" required>
+
+<button type="submit">
+Recommend Crop
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>
